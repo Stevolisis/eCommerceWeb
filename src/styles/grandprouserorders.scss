@@ -1,0 +1,171 @@
+@import './variables2';
+
+.userorderheading{
+    background: linear-gradient(40deg,$color10,$color20);
+    padding: 15px; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+       button{
+        border: 0;
+        padding: 8px 15px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+        background: $color50;
+        color:$color104;
+        cursor: pointer;
+        font-family: font3;
+       }
+       
+        p{
+            font-family: font3;
+            color:$color40;
+        }
+}
+
+.userorderscon{
+    padding: 20px;
+}
+
+.userorder{
+    border: 1px solid $color105;
+    border-radius: 5px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.userorderimg{
+    width: 140px;
+    height: 140px;
+
+    img{
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+    }
+}
+
+.userorderinfo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px;
+}
+
+.orderinfo1 p:nth-child(1){
+    font-family: font3;
+    font-size: 14px;
+}
+
+.orderinfo1 p:nth-child(2){
+   padding: 5% 0;
+}
+
+.orderinfo1 p:nth-child(3){
+    font-size: 11px;
+    color:$color40;
+    background: $color104;
+    padding: 3px 7px;
+}
+
+.orderinfo2{
+    color: $color102;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    button{
+        border: 0;
+       // padding: 10px 15px;
+        width:80px;
+        height: 34px;
+        border-radius: 5px;
+        //box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+        background: $color50;
+        color:$color60;
+        cursor: pointer;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: font3;
+    }
+}
+
+
+
+
+
+
+@media (max-width:500px) {
+    .userorder{
+        flex-wrap: wrap;
+    }
+}
+
+
+
+
+@media (max-width:750px) {
+    
+    .userorderscon{
+        padding: 13px;
+    }
+    .userorderimg{
+        width: 100%;
+        height: 180px;
+        position: relative;
+        img{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .userorderinfo{
+        flex-wrap: wrap;
+    }
+    .orderinfo1{
+        width: 100%;
+    }
+
+    .orderinfo1 p:nth-child(1){
+        font-size: 13px;
+    }
+    
+    .orderinfo1 p:nth-child(2){
+       padding: 2% 0;
+       font-size: 12px;
+    }
+    
+    .orderinfo1 p:nth-child(3){
+        font-size: 10px;
+        padding: 2px 5px;
+    }
+    
+    .orderinfo2{
+        font-size: 11px;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        padding-top: 5px;
+        flex-direction: row;
+        align-items: center;
+        height: auto;
+
+        button{
+            border: 0;
+            width:70px;
+            height: 31px;
+            font-size: 12px;
+        }
+    }
+    
+}

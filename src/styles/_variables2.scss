@@ -1,0 +1,38 @@
+$color10:#758db9 ;
+$color20:#fa798d;
+$color30:#191a1c;
+$color40:white;
+$color50:#faf8f8;
+$color60:#5972b9;
+$color70:#fa568d;
+$color80:#E61601;
+$color90:#E2F5FF;
+$color100:#FEEFDE;
+$color101:#FEE2CC;
+$color102:gray;
+$color103:#28292b;
+$color104:rgb(61, 61, 61);
+$color105:lightgray;
+
+
+
+    @font-face {
+    font-family: font1;
+    src: url("../fonts/Poppins-Light.ttf");
+    }
+
+     @font-face {
+    font-family: font2;
+    src: url("../fonts/Poppins-Bold.ttf");
+    }
+
+    @font-face {
+    font-family: font3;
+    src: url("../fonts/Poppins-Medium.ttf");
+    }
+
+    
+    @font-face {
+    font-family: font4;
+    src: url("../fonts/Poppins-Regular.ttf");
+    }

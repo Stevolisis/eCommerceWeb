@@ -1,0 +1,199 @@
+@import './variables';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.body{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    h1{
+        padding: 20px 0;
+        color: $color1;
+    }
+}
+
+.slidercon{
+    width: 100vw;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider{
+    width: 60vw;
+    height: 28vw;
+
+
+    img{
+    width: 60vw;
+    height: 28vw;   
+    }
+}
+
+.icons{
+border-radius: 50%;
+background: $color1;
+padding: 10px;
+color:$color6;
+cursor: pointer;
+position: absolute;
+left: 22vw;
+
+i{
+    background-color: $color1 !important;
+}
+}
+
+.icons2{
+    border-radius: 50%;
+    background: $color1;
+    padding: 10px;
+    color:$color6;
+    cursor: pointer;
+    position: absolute;
+    right: 22vw;
+
+    i{
+        background-color: $color1 !important;
+    }
+    }
+
+
+
+.slider2{
+    width: 60vw;
+    height: 28vw;
+
+
+    img{
+        width: 60vw;
+        height: 28vw;   
+        opacity: .4;
+        }
+}
+.slider2:hover{
+  img{
+    opacity: .4;
+  }
+}
+
+.chartlink{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    
+    a{
+        text-decoration: none;
+        padding:0 5px;
+        color: $color8;
+    }
+    i{
+        color:$color1;
+    }
+}
+
+.chartcon{
+    width: 60vw;
+    background: $color6;
+    height: 350px;
+}
+
+.slots{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: -20px;
+}
+.slot{
+    background-color: $color1;
+    padding:4px;
+    margin:0 2px;
+    border-radius:50%;
+    cursor: pointer;
+}
+
+.slot2{
+    background-color: white;
+    padding:4px;
+    margin:0 2px;
+    border-radius:50%;
+    cursor: pointer;
+}
+//0 4px 8px 0 rgba(0,0,0,.2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width:700px){
+
+    .slider{
+        width: 90vw;
+        height: 45vw;
+
+        img{
+            width: 90vw;
+            height: 43vw;         
+        }
+    }
+
+    .slider2{
+        width: 80vw;
+        height: 43vw;
+
+        img{
+            width: 80vw;
+            height: 43vw;      
+            margin-left:-80vw;   
+        }
+    }
+    
+
+    .icons{
+font-size: 8px;
+padding: 7px;
+left: 12vw;
+        }
+
+    .icons2{
+font-size: 8px;
+padding: 7px;
+right: 12vw;
+        }
+
+        .chartcon{
+            width: 80vw;
+            height: 300px;
+        }
+        
+
+        .slot{
+            padding:3px;
+            margin:0 1px;
+        }
+        
+        .slot2{
+            padding:3px;
+            margin:0 1px;
+        }
+}

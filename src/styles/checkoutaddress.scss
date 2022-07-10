@@ -1,0 +1,35 @@
+@import './variables2';
+
+
+.popupaddresscon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    z-index: 300;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.2);
+    box-sizing: border-box;
+}
+
+.popupaddress{
+width: 60vw;
+height: 80vh;
+overflow-y: auto;
+}
+
+
+
+
+
+@media (max-width:750px) {
+    .popupaddress{
+        padding: 6%;
+    }
+
+    .popupaddress{
+        width: 85vw;
+        }
+       
+}

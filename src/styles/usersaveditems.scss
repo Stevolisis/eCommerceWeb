@@ -1,0 +1,90 @@
+@import './variables2';
+
+.savediteminfo{
+ display: flex;
+ align-items: flex-start;
+ justify-content: space-between;
+ width: 100%;
+ padding: 12px;
+
+
+     span{
+        font-size: 13px;
+        font-family: font3;  
+     }
+}
+
+.saveditemprice{
+    margin: 12px 0; 
+}
+
+.savedinfo1{
+    width: 70%;
+}
+.savedinfo1 p:nth-child(1){
+    font-family: font1;
+    font-size: 14px;
+}
+
+.savedinfo1 span:nth-of-type(2){
+    color: $color102;
+    text-decoration: line-through;
+    padding-left: 5px;
+}
+
+.savedinfo1 p:nth-of-type(2){
+padding: 8px 10px;
+background-color: $color100;
+font-size: 11px;
+width: 42px;
+text-align: center;
+}
+
+.savedinfo2{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 100%;
+
+    button{
+        border: 0;
+       // padding: 10px 15px;
+        width:80px;
+        height: 34px;
+        border-radius: 5px;
+        //box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+        background: $color50;
+        color:$color60;
+        cursor: pointer;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: font3;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:750px) {
+    .savedinfo2{
+    
+        button{
+            border: 0;
+            width:70px;
+            height: 31px;
+            font-size: 12px;
+        }
+    }
+    
+}

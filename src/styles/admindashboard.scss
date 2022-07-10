@@ -1,0 +1,174 @@
+@import './variables2';
+
+
+.adminstat1con{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.adminstat1{
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    background: $color40;
+    width: 30%;
+    padding: 10px;
+}
+
+.adminstat1icon{
+    padding: 0 10px 0 4px;
+}
+
+.adminstat1icon div:nth-of-type(1){
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: MediumSeaGreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminstat1details p:nth-of-type(1){
+    font-family: font3;
+    font-size: 14px;
+}
+
+.adminstat1details p:nth-of-type(2){
+    font-size: 13px;
+}
+
+.adminstat2con{
+    display: flex;
+    justify-content: space-between;
+    margin: 18px 0;
+}
+
+.adminstat2{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    background: $color40;
+    width: 49%;
+}
+
+.adminstat2heading{
+    padding: 15px;
+
+    p{
+        font-family: font3;
+        font-size: 14px;
+    }
+}
+
+.adminstat2stat{
+    width: 100%;
+    height: auto;
+    padding: 14px;
+    box-sizing: border-box;
+}
+
+.adminstat3con{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    background: $color40;
+  //  margin-top: 18px;
+    padding-bottom: 18px;
+}
+
+.adminstat3{
+    padding: 0 15px;
+}
+
+.adminstat3info{
+    overflow-x: auto;
+
+    table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    tr{
+        border: 0;
+        border: 1px solid $color105;
+    }
+    td{
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+
+    img{
+        width: 100px;
+        height: 90px;
+    }
+    
+}
+
+.adminmorebtn{
+    padding: 0 15px;
+    display: flex;
+    justify-content: flex-end;
+    button{
+        color: $color50;
+        padding: 10px;
+        border: 0;
+        background: $color60;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        cursor: pointer;
+
+    }
+}
+
+.chartfilterscon{
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px 5px;
+padding-top: 0;
+margin-top: -13px;
+
+    select{
+        border: 1px solid silver;
+        padding: 7px 4px;
+        border-radius: 5px;
+        width: 100%;
+        margin:0 5px;
+        font-size: 11px;
+    }
+}
+
+
+
+
+
+
+@media (max-width:800px) {
+    .adminstat1con{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 7px;
+        width: 100%;
+    }
+    
+    .adminstat1{
+        width: 100%;
+        margin: 5px 0;
+        padding: 12px 10px;
+        box-sizing: border-box;
+    }
+
+    .adminstat2con{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .adminstat2{
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+}

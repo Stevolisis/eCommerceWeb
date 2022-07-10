@@ -1,0 +1,154 @@
+@import './variables2';
+
+
+.checkoutcon{
+    width:100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.checkoutinfocon{
+    width:70%;
+}
+.checkoutaddresscon{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    background: $color40;
+}
+
+.checkoutaddress{
+    padding: 20px;
+
+    p{
+        font-size: 13px;
+        color: $color102;
+    }
+}
+
+.checkoutpaymentcon{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    background: $color40;
+    margin-top: 25px;
+}
+
+.checkoutpayment{
+    padding: 20px;
+}
+
+.paymentmethods{
+display:flex;
+align-items: center;
+padding: 10px 0;
+
+     p{
+        font-size: 15px;
+        color: $color104; 
+        padding-left: 10px;
+     }
+}
+
+.checkoutsummarycon{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    background: $color40;
+    width: 27%;
+}
+
+.checkoutvouchercon{
+    padding:10px 20px;
+}
+
+.checkoutvoucherheading{
+      p{
+        font-size: 11px;
+        color: $color104;
+        padding: 3px 0; 
+      }
+}
+.checkoutvoucher{
+display: flex;
+align-items: center;
+
+    input{
+        border: 1px solid silver;
+        padding: 9px 7px;
+        border-radius: 5px 0 0 5px;
+        box-sizing: border-box;
+        width: 70%;
+    }
+
+    button{
+        width: 30%;
+        color: $color50;
+        font-family: font3;
+        padding: 10px;
+        border: 0;
+        background: $color60;
+        cursor: pointer;
+        border-radius: 0 5px 5px 0;
+        text-align: center;
+    }
+}
+
+.checkoutsummary{
+    padding:10px 20px;
+}
+
+.checkoutsummary div:nth-of-type(1){
+ color: $color102;
+ font-size: 14px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.checkoutsummary div:nth-of-type(2){
+    color: $color102;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid $color105;
+}
+
+.checkoutsummary div:nth-of-type(3){
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.checkoutsummary div:nth-of-type(4) button{
+    width: 100%;
+    color: $color50;
+    font-family: font3;
+    padding: 10px;
+    border: 0;
+    background: $color60;
+    cursor: pointer;
+    border-radius:5px;
+    text-align: center;
+}
+   
+
+
+
+
+
+
+
+@media (max-width:750px) {
+    .checkoutcon{
+        flex-direction: column;
+    }
+
+    .checkoutinfocon{
+        width:100%;
+        margin: 13px 0;
+    }
+
+    .checkoutsummarycon{
+        width: 100%;
+    }
+}

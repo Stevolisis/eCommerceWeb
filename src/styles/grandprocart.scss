@@ -1,0 +1,239 @@
+@import './variables2';
+
+
+.cartcon{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.cartheading{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    padding: 20px 15px;
+    background: $color40;
+    font-size: 15px;
+}
+
+.cartproductcon{
+ //box-shadow: 0 0.5px 1px 0 rgba(0,0,0,.2);
+ background: $color40;
+ margin-top: 12px;
+}
+
+
+.cartproductcon2{
+ width: calc(100%);
+ margin-right: 50px;
+ box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+ background: $color40;
+}
+
+.cartproduct{
+    display: flex;
+    width: 100%;
+}
+
+.cartimg{
+    width: 150px;
+    height: 140px;
+    padding: 5px 10px;
+    .cartdiscount{
+        position: absolute;
+        padding: 10px;
+        background-color: $color100;
+        font-size: 11px;
+        margin-bottom: -37px;
+    }
+
+    img{
+        width: 150px;
+        height: 140px;
+    }
+}
+
+.cartinfo{
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+   
+    .cartproductname{
+        font-size: 15px;
+    }
+
+    span{
+        font-family: font3;
+        font-size: 13px;
+    }
+    .cartproductprice span:nth-child(2){
+    text-decoration: line-through;
+    color:$color102;
+    }
+}
+
+.cartnumber{
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+     
+    span{
+        padding: 0 12px;
+    }
+    button{
+        border: 0;
+        padding: 8px 16px;
+        margin-top: 8px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        background: $color60;
+        color:$color40;
+        cursor: pointer;
+    }
+}
+
+.cartactions{
+    box-shadow: 0 0.5px 1px 0 rgba(0,0,0,.2);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    padding-top: 0;
+
+    button{
+        border: 0;
+        padding: 8px 16px;
+        margin-top: 8px;
+        border-radius: 5px;
+        background: $color40;
+        color:$color60;
+        cursor: pointer;
+        font-family: font3;
+    }
+    
+}
+
+
+.cartsummarycon{
+    width: calc(100%/2.5);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    padding:9px 15px;
+    background: $color40;
+}
+
+.cartsummaryheading{
+    text-align: center;
+    background: $color103;
+    padding: 5px;
+    color:$color40;
+}
+
+.cartsummaryinfo{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 0;
+}
+
+.cartsummarybutton{
+    button{
+        border: 0;
+        padding: 8px 16px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        background: $color60;
+        color:$color40;
+        cursor: pointer;
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width:740px) {
+    .cartheading{
+        font-size: 14px;
+    }
+
+    .cartcon{
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .cartproductcon2{
+        margin-right: 0px;
+        width: 100%;
+        margin: 10px 0;
+        margin-bottom: 20px;
+    }
+    
+
+    .cartimg{
+        width: 140px;
+        height: 130px;
+        .cartdiscount{
+            position: absolute;
+            padding: 8px;
+            font-size: 10px;
+        }
+    
+        img{
+            width: 140px;
+            height: 130px;
+        }
+    }
+    
+    .cartinfo{
+        padding: 10px 15px;
+        flex-direction: column;
+       
+        .cartproductname{
+            font-size: 14px;
+        }
+
+        span{
+            font-family: font3;
+            font-size: 13px;
+        }
+        .cartproductprice span:nth-child(2){
+        text-decoration: line-through;
+        color:$color102;
+        }
+    }
+
+    .cartnumber{
+    display: flex;
+    align-items: center;
+    padding: 0;
+     
+    span{
+        padding: 0 10px;
+    }
+    button{
+        border: 0;
+        padding: 6px 14px;
+        margin-top: 8px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        background: $color60;
+        color:$color40;
+        cursor: pointer;
+    }
+}
+
+    
+    .cartsummarycon{
+        width: 89%;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        padding:9px 15px;
+        background: $color40;
+    }
+}

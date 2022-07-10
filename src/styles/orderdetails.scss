@@ -1,0 +1,103 @@
+@import './variables2';
+
+.orderdetailcon{
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.orderdetailheading{
+    border-radius: 5px 5px 0 0;
+    border: 1px solid $color105;
+    border-bottom: 0;
+    padding: 9px 17px;
+
+    p{
+        font-family: font3;
+        font-size: 18px;
+    }
+}
+
+.orderdetail{
+    //border-bottom: 1px solid $color105;
+    border: 1px solid $color105;
+    padding: 7px 10px;
+
+    span{
+        font-size: 13px;
+        color: $color30;
+        font-family: font3;
+        width: 60px;
+    }
+
+    p{
+        font-size: 13px;
+        color: $color104;
+        padding: 7px 12px;
+    }
+
+    button{
+        margin: 0 3px;
+        color: $color50;
+        padding: 10px;
+        border: 0;
+         background: $color60;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+        cursor: pointer;
+        font-family: font3;
+    }
+}
+
+.detailscon{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.orderdetailcon2{
+    width: 48%;
+}
+
+
+
+
+
+
+@media (max-width:750px) {
+.orderdetailcon{
+    margin: 14px;
+    margin-bottom: 0;
+}    
+    
+.orderdetailheading{
+    padding: 9px 15px;
+
+    p{
+        font-size: 17px;
+    }
+}
+
+.orderdetail{
+    padding: 7px 5px;
+
+    span{
+        font-size: 12px;
+    }
+
+    p{
+        font-size: 12px;
+    }
+}
+
+.detailscon{
+flex-direction: column;
+padding: 0 14px;
+
+}
+
+.orderdetailcon2{
+    width: 100%;
+    margin: 10px 0;
+}
+
+}
