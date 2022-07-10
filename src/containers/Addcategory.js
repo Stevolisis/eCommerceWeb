@@ -5,7 +5,7 @@ export default function Addcategory(){
     const addcategory=(()=>{
         Swal.fire(
           'Successful!',
-          'Category Added.',
+          'Category Added',
           'success'
         )
         });
