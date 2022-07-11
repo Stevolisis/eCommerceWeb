@@ -11,9 +11,9 @@ export default function Navbar({id,setTrigger,admin}){
 
     $(window).click((e)=>{
        if(window.innerWidth<=750){
-        if(e.target.className==='popupaddresscon'||e.target.className==='navlink'){
+        if(e.target.className==='popupaddresscon'||e.target.className==='navlink'||e.target.className==='navlinks'){
             setTrigger(false);
-            $(`${id}`).css('margin-left','-50%');
+            $(`${id}`).css('margin-left','-80%');
         }
        }
        

@@ -34,7 +34,10 @@ Toast.fire({
 
 <div className='header2' >
     <div className='categoryspace2'>
-    <div className='logo'><h2>GrandProSales</h2></div>
+    <div className='logo'>
+                <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
+
+        </div>
     <div className='currentcateg'>
         <i className='fa fa-caret-right ' />
         <span>Computers and Tablets</span></div>
@@ -56,7 +59,9 @@ Toast.fire({
     
     <div className='header' >
     <div className='categoryspace'>
-    <div className='logo'><h2>GrandProSales</h2></div>
+    <div className='logo'>    
+        <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
+</div>
     <div className='currentcateg'>
         <i className='fa fa-caret-right ' />
         <span>Computers and Tablets</span>

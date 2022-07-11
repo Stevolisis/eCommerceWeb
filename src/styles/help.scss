@@ -80,6 +80,11 @@
     text-align: center;
 }
 
+.customercare2heading2 h2{
+    font-size:19px;
+    margin: 50px 0 0 10px;
+}
+
 .customercare2heading button{
 color: $color50;
 padding: 8px;
@@ -92,6 +97,19 @@ cursor: pointer;
 font-size: 12px;
 margin: 0 10px;
 }
+
+.customercare2heading2 button{
+    color: $color50;
+    padding: 8px;
+    width: 140px;
+    border: 0;
+    background: $color60;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+    cursor: pointer;    
+    font-size: 12px;
+    margin: 0 0 12px 10px;
+    }
 
 .customercare2{
     height: 400px;

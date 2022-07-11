@@ -27,7 +27,7 @@ Toast.fire({
 
 
    $(window).click((e)=>{
-    if(e.target.className==='popupaddresscon'){
+    if(e.target.className==='popupaddresscon'||e.target.className==='popupaddress'){
         setTrigger(false)
     }
     
@@ -41,7 +41,7 @@ Toast.fire({
 <div className='headercon'>
 <div className='header2'>
     <div className='categoryspace2'>
-    <h2>GrandProSales</h2>
+            <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
     </div>
 
 
@@ -60,7 +60,7 @@ Toast.fire({
 
 <div className='header'>
     <div className='categoryspace'>
-    <h2>GrandProSales</h2>
+            <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
     </div>
 
 

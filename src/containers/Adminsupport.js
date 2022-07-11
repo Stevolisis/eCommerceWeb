@@ -62,7 +62,7 @@ export default function Adminsupport(){
             
         </div>
 
-        <div className='customercarelinks'>
+        <div className='customercarelinks' style={{marginTop:'50px'}}>
         <Link to='/' style={{background:'#128C7E'}}><i className='fa fa-whatsapp'/>Whatsapp</Link>
         <Link to='/' style={{background:'#3b5998'}}><i className='fa fa-facebook'/>Facebook</Link>
         <Link to='/' style={{background:'#00acee'}}><i className='fa fa-twitter'/>Twitter</Link>
@@ -134,8 +134,10 @@ export default function Adminsupport(){
         <div className='usereditbtn'>
         <button onClick={()=>addspec()}>UPDATE</button>
         </div>
-        <div className='customercare2heading' style={{marginTop:'20px'}}>
-    <h2>Fequently Asked Questions</h2> <button onClick={()=>navigate('/admin/addfaq')}>Add F.A.Q</button> </div>
+        <div className='customercare2heading2'>
+        <h2>Fequently Asked Questions</h2> 
+        <button onClick={()=>navigate('/admin/addfaq')}>Add F.A.Q</button>
+        </div>
 
 <div className='customercare2'>
 <Accordion2

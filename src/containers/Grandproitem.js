@@ -67,7 +67,7 @@ return (
        <div className='headercon'>
 <div className='header2'>
     <div className='categoryspace2'>
-    <h2>GrandProSales</h2>
+        <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
     </div>
 
 
@@ -86,7 +86,7 @@ return (
 
 <div className='header'>
     <div className='categoryspace'>
-    <h2>GrandProSales</h2>
+        <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
     </div>
 
 

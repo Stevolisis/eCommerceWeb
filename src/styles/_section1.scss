@@ -22,11 +22,13 @@
     height: 100%;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
     background: $color40;
-    
+    border-radius: 5px;
+
     img{
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border-radius: 5px;
     }
 }
 
@@ -44,16 +46,13 @@
     justify-content: center;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
     background: $color40;
+    border-radius: 5px;
 
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
 
     a{
         width: 100%;
         height: 100%;
+        z-index: 100;
     }
 }
 
@@ -61,6 +60,8 @@
 width: 100%;
 height: 100%;
 display: flex;
+border-radius: 5px;
+border-radius: 5px;
 }
 
 .slidebtncon{
@@ -75,7 +76,8 @@ display: flex;
     justify-content: flex-start;    
  
     i{
-        background: $color10;
+        z-index: 150;
+        background: $color30;
         border-radius: 50%;
         color:$color40;
         padding: 10px;
@@ -89,7 +91,8 @@ display: flex;
     justify-content: flex-end;
 
     i{
-        background: $color10;
+        z-index: 150;
+        background: $color30;
         border-radius: 50%;
         color:$color40;
         padding: 10px;

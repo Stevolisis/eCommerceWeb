@@ -24,20 +24,13 @@ export default function Useraccount(){
     return(
         <>
         <div className='usermaincon'>
+        <div className='userorderheading'>
+            <p>Account Overview</p>
+        </div>
 <div className='username'><p>Hi, Steven</p></div>
-<div className='useranalyticscon'>
-    <div>
-    <p>Wallet : N340.00</p>
-    </div>
-    <div>
-    <p>Orders: 3</p>
-    </div>
-</div>
+
 
 <div className='overviewcon'>
-
-<div className='overviewheading'><p>Account Overview</p></div>
-
 <div className='overview'>
 
 <div className='overviewdetails'>

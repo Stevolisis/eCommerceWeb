@@ -28,9 +28,11 @@ const images=[
     
     
 
-        setTimeout(() => {
-            nextslide();
-        }, 3000);
+useEffect(()=>{
+    setTimeout(() => {
+        nextslide();
+    }, 3000);
+},[currentslide,nextslide]);
 
 
       
@@ -71,7 +73,7 @@ useEffect(()=>{
 <div className='headercon'>
 <div className='header2'>
     <div className='categoryspace2'>
-    <h2><Link to='/'> GrandProSales </Link></h2>
+    <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
     </div>
 
 
@@ -90,7 +92,7 @@ useEffect(()=>{
 
 <div className='header'>
     <div className='categoryspace'>
-    <h2><Link to='/'> GrandProSales </Link></h2>
+    <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
     </div>
 
 
@@ -125,7 +127,7 @@ useEffect(()=>{
 
 <div className='sub1section1'>
 <div className='subimage'>
-<Link to='/categories'><img src='/media3/advert5.jpg' alt='mainbanner' />
+<Link to='/categories'><img src='/media3/advert6.jpg' alt='mainbanner' />
 </Link>
 </div>
 <div className='subimage'>

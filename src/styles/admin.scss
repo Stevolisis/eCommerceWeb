@@ -26,8 +26,18 @@
     align-items: center;
     font-family: font2;
 
-    h2{
-        font-size: 18;
+    a{
+        text-decoration: none;
+        color:$color30;
+        font-size: 22px;
+    }
+
+    img{
+        width: 23px;
+        height: 23px;
+        margin-right: -4px;
+        margin-bottom: -2.5px;
+
     }
 }
 

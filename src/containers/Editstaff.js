@@ -103,7 +103,7 @@ export default function Editstaff(){
         </div>
 
         <div className='usereditbtn'>
-        <button onClick={()=>editstaff()}>ADD</button>
+        <button onClick={()=>editstaff()}>EDIT</button>
         </div>
         </div>            
         </div>        
