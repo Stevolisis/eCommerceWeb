@@ -19,6 +19,7 @@ import './styles/admin.scss';
 import './styles/admindashboard.scss';
 import './styles/admincategories.scss';
 import './styles/adminaddcateg.scss';
+import './styles/signin.scss';
 import 'font-awesome/css/font-awesome.min.css';
 import Grandpro from './containers/Grandpro';
 import Grandprocateg from './containers/Grandprocateg';

@@ -1,0 +1,59 @@
+@import './variables2';
+
+.signincon{
+    background: $color40;
+    width: 30vw;
+    padding: 40px 30px;
+    border-radius: 5px;
+}
+
+.siginheading p{
+    font-family: font3;
+    font-size: 25px;
+    padding-bottom: 12px;
+}
+
+.signlink{
+    padding: 5px 0;
+    font-size: 13px;
+
+    p{
+        font-size: 12px;
+        color: $color106;
+        cursor: pointer;
+    }
+}
+
+.signlink2{
+    padding: 10px 0;
+    font-size: 13px;
+    text-align: center;
+
+    span{
+        font-size: 12px;
+        color: $color106;
+        cursor: pointer;
+    }
+}
+
+
+.signlink3{
+    padding: 10px 0;
+    font-size: 11px;
+    color: $color103;
+
+    i{
+        padding-right: 5px;
+        color: $color107;
+    }
+}
+
+
+
+
+
+@media (max-width:700px) {
+    .signincon{
+        width: 65vw;
+    }
+}

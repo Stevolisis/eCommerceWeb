@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import Accordion from './Accordion'
 import Reviews from './Reviews'
 import Swal from 'sweetalert2';
+import { faHeart,faBell,faStar } from '@fortawesome/free-regular-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import Ratings from './Ratings';
 
 export default function Grandproitem(){
     const [currentslide,setCurrentslide]=useState(0);
@@ -136,13 +139,7 @@ return (
 <div className='gproductname'><p>Heinz Salad Cream 285 Kg</p></div>
 <div className='gproductcateg'><p>Brand : NIVEA | Similar products from NIVEA</p></div>
 <div className='gproductratings'>
-    <div className='gratings1'>
-    <i className='fa fa-star'/>
-    <i className='fa fa-star'/>
-    <i className='fa fa-star'/>
-    <i className='fa fa-star'/>
-    <i className='fa fa-star'/>
-    </div>
+<Ratings value='4' />
 
     <div className='gratings2'>
     <i className='fa fa-share-alt'/>

@@ -1,11 +1,12 @@
 import {React, useState} from 'react';
 import {Link} from 'react-router-dom'
-import Checkoutaddress from './Checkoutaddress';
+import Popupcomponent from './Popupcomponent';
 import $ from 'jquery';
 import Swal from 'sweetalert2';
 
 export default function Checkout(){
-   const [trigger,setTrigger]=useState(false);
+    const [trigger,setTrigger]=useState(false);
+    const [inview,setInview]=useState('useraddress');
 
    const Toast = Swal.mixin({
     toast: true,
@@ -35,7 +36,7 @@ Toast.fire({
 
     return(
         <>
-        {trigger && <Checkoutaddress setTrigger={setTrigger}/>}
+        {trigger && <Popupcomponent setTrigger={setTrigger} inview={inview}/>}
         <div className='main'>
 
 <div className='headercon'>
@@ -94,8 +95,8 @@ Toast.fire({
 <div className='checkoutinfocon'>
 <div className='checkoutaddresscon'>
     <div className='userorderheading'>
-        <p>ADDRESS DETAILS</p>
-        <button onClick={()=>setTrigger(true)}>CHANGE</button>
+        <p onClick={()=>(setTrigger(true), setInview('signin'))}>ADDRESS DETAILS</p>
+        <button onClick={()=>(setTrigger(true), setInview('useraddress'))}>CHANGE</button>
         </div>
     <div className='checkoutaddress'>
         <p>Steven Joseph</p>

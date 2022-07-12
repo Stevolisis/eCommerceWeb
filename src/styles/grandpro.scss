@@ -49,7 +49,6 @@ margin-bottom: 30px;
     padding: 12px;
     background: $color40;
     box-sizing: border-box;
-    box-sizing: border-box;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
 }
 .header2{
@@ -103,7 +102,7 @@ margin-bottom: 30px;
     align-items: center;
 
     input{
-        border: 1px solid silver;
+        border: 1px solid $color108;
         padding: 11px 8px;
         border-radius: 5px;
         width: 60%;
@@ -349,7 +348,7 @@ margin: 0 10px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    color:$color30;
+    color:$color40;
     }
 
 .categproducts{

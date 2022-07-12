@@ -30,7 +30,7 @@ export default function Useraddresses({popup,setView}){
         <div className='userorderheading'>
             <p>Address(3)</p>
            {popup==='true'? 
-            <button onClick={()=>setView(false)}>Add Popup</button>
+            <button onClick={()=>setView('adduseraddress')}>Add Popup</button>
            :
              <button onClick={()=>navigate('/user/addaddress')}>Add</button>} 
         </div>
