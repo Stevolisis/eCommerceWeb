@@ -35,7 +35,7 @@ Toast.fire({
 <div className='header2' >
     <div className='categoryspace2'>
     <div className='logo'>
-                <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
+                <h2><Link to='/'><img src='https://ecommerce.stephcom.com.ng/favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
 
         </div>
     <div className='currentcateg'>
@@ -60,7 +60,7 @@ Toast.fire({
     <div className='header' >
     <div className='categoryspace'>
     <div className='logo'>    
-        <h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
+        <h2><Link to='/'><img src='https://ecommerce.stephcom.com.ng/favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
 </div>
     <div className='currentcateg'>
         <i className='fa fa-caret-right ' />

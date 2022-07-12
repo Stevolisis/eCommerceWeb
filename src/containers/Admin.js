@@ -17,7 +17,7 @@ export default function Admin(){
 <div className='adminheader'>
 <div className='admincategoryspace'>
 <Navbar id='nav' setTrigger={setTrigger} admin='true'/>    
-<h2><Link to='/'><img src='favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
+<h2><Link to='/'><img src='https://ecommerce.stephcom.com.ng/favicon.svg' alt='Logo'/> GrandProSales </Link></h2>
 </div>
 
 

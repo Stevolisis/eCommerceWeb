@@ -1,5 +1,6 @@
 {
   "name": "ecommerce",
+  "homepage":"https://ecommerce.stephcom.com.ng",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
