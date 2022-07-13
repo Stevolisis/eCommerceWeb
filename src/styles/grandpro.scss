@@ -358,7 +358,9 @@ align-items: center;
 width: 100%;
 flex-wrap: wrap;
 }
-
+.producthead1 p{
+    color: $color40;
+}
 .footercon{
     width:100%;
     display: flex;
@@ -483,7 +485,6 @@ footer{
     width: 100%;
 
     input{
-        border: 1px solid silver;
         padding: 9px 9px;
         border-radius: 8px;
         width: 90%;

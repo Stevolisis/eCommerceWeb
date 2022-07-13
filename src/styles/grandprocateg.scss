@@ -8,7 +8,7 @@
     align-items: center;
 
     input{
-        border: 1px solid silver;
+        border: 1px solid $color108;
         padding: 11px 8px;
         border-radius: 5px;
         width: 60%;
@@ -90,7 +90,7 @@ padding: 12px 0;
          
         input{
             width: 100px;
-            border: 1px solid silver;
+            border: 1px solid $color108;
             padding: 5px 6px;
             border-radius: 5px;
             font-size: 12px;
@@ -288,8 +288,8 @@ cursor: pointer;
     .search2{
         width: 100%;
         justify-content: flex-start;
+        
         input{
-            border: 1px solid silver;
             padding: 9px 9px;
             border-radius: 8px;
             width:74%;
