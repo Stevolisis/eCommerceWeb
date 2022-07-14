@@ -10,7 +10,7 @@ export default function Addcategory(){
         slug:'nikebrand',
         img_link:'Niketoolkit.jpg'
        }
-        axios.post('http://localhost:80/categories',{category},{withCredentials:true})
+        axios.post('http://localhost:80/addcategory',{category},{withCredentials:true})
         .then(res=>{
             let data=res.data.data;
 
