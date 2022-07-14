@@ -1,13 +1,32 @@
 import {React} from 'react';
 import Swal from 'sweetalert2';
+import axios from 'axios';
 
 export default function Addcategory(){
     const addcategory=(()=>{
-        Swal.fire(
-          'Successful!',
-          'Category Added',
-          'success'
-        )
+
+       const category={
+        name:'Nike',
+        slug:'nikebrand',
+        img_link:'Niketoolkit.jpg'
+       }
+        axios.post('http://localhost:80/categories',{category},{withCredentials:true})
+        .then(res=>{
+            let data=res.data.data;
+
+            Swal.fire(
+                'Successful!',
+                `Data Done: ${data}`,
+                'success'
+              )
+        }).catch(err=>{
+
+            Swal.fire(
+                'Successful!',
+                `Error Occured: ${err}`,
+                'success'
+              )
+        });
         });
 
     return(
