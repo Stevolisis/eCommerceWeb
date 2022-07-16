@@ -33,7 +33,7 @@ export default function Addproduct({type}){
         e.preventDefault();
         const product={
             name:name.current.value,
-            category:["Musical Instrumentse","Niker","Nikeln"],
+            category:["Musical Instrumentse","Niker","Nikel"],
             stock:stock.current.value,
             regular_price:regular_price.current.value,
             sale_price:sale_price.current.value,
@@ -45,9 +45,9 @@ console.log(product);
 
         const res=await axios.post('http://localhost:80/addproduct',{product},{withCredentials:true});
         let data=res.data.data;
-        if(data==='Error Occured'||data==='Product Exist, pls choose another'||data==='Error Occured At Save'){
+        if(data==='Error Occured'||data==='Invalid Category'||data==='Product Exist, pls choose another'||data==='Error Occured At Save'){
             Swal.fire(
-                'Successful!',
+                'Error!',
                 `Data Done: ${data}`,
                 'warning'
             );

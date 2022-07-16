@@ -1,17 +1,19 @@
 import {React} from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import { useParams } from 'react-router-dom';
 
-export default function Addcategory(){
-    const addcategory=(()=>{
+export default function Editcategory(){
+    const {id}=useParams();
 
+    const editcategory=(()=>{
        const category={
-        name:'Rexona',
-        slug:'Rexonabrand',
-        img_link:'Rexonatoolkit.jpg'
+        name:'Rexonatt',
+        slug:'Rexonattbrand',
+        img_link:'Rexonatttoolkit.jpg'
        }
        
-        axios.post('http://localhost:80/addcategory',{category},{withCredentials:true})
+        axios.put(`http://localhost:80/editcategory/${id}`,{category},{withCredentials:true})
         .then(res=>{
             let data=res.data.data;
 
@@ -34,7 +36,7 @@ export default function Addcategory(){
         <>
         <div className='admindashcon'>
         <div className='userorderheading'>
-        <p>Add Category</p>
+        <p>Edit Category ({id})</p>
         </div>
         <div className='addcategcon'>
         <div className='admineditnamecon'>
@@ -61,7 +63,7 @@ export default function Addcategory(){
         </div>
 
         <div className='usereditbtn'>
-        <button onClick={()=>addcategory()}>ADD</button>
+        <button onClick={()=>editcategory()}>EDIT</button>
         </div>
         </div>            
         </div>

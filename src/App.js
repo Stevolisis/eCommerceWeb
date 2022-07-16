@@ -59,6 +59,7 @@ import Editcoupon from './containers/Editcoupon';
 import Addcoupon from './containers/Addcoupon';
 import Addevent from './containers/Addevent';
 import Adminanalytics from './containers/Adminanalytics';
+import Editcategory from './containers/Editcategory';
 
 function App() {
 
@@ -91,26 +92,31 @@ function App() {
       <Route path='dashboard' element={<Admindashboard />} />
       <Route path='products' element={<Adminproducts />} />
       <Route path='categories' element={<Admincategories />} />
-      <Route path='addcategory' element={<Addcategory />} />
-      <Route path='addproduct' element={<Addproduct />} />
-      <Route path='editproduct/:id' element={<Editproduct />} />
-      <Route path='orders' element={<Adminorders />} />
-      <Route path='order' element={<Userorder origin='admin'/>} />
       <Route path='sales' element={<Adminsales />} />
       <Route path='users' element={<Adminusers />} />
-      <Route path='edituser/:id' element={<Edituser />} />
       <Route path='staffs' element={<Adminstaffs />} />
-      <Route path='addstaff' element={<Addstaff />} />
-      <Route path='editstaff/:id' element={<Editstaff />} />
       <Route path='support' element={<Adminsupport />} />
-      <Route path='addfaq' element={<Addsupport />} />
-      <Route path='editfaq/:id' element={<Editsupport />} />
       <Route path='bannerimg' element={<Adminbannerimg />} />
       <Route path='payment' element={<Adminpayment />} />
       <Route path='eventandcoupon' element={<Admineventcoupon />} />
-      <Route path='editcoupon/:id' element={<Editcoupon />} />
+      <Route path='orders' element={<Adminorders />} />
+      <Route path='order' element={<Userorder origin='admin'/>} />
+
+      <Route path='addcategory' element={<Addcategory />} />
+      <Route path='addproduct' element={<Addproduct />} />
+      <Route path='addstaff' element={<Addstaff />} />
+      <Route path='addfaq' element={<Addsupport />} />
       <Route path='addcoupon' element={<Addcoupon />} />
       <Route path='addevent' element={<Addevent />} />
+
+      <Route path='edituser/:id' element={<Edituser />} />
+      <Route path='editproduct/:id' element={<Editproduct />} />
+      <Route path='editcategory/:id' element={<Editcategory />} />
+      <Route path='editcoupon/:id' element={<Editcoupon />} />
+      <Route path='editstaff/:id' element={<Editstaff />} />
+      <Route path='editfaq/:id' element={<Editsupport />} />
+
+
       <Route path='analytics' element={<Adminanalytics />} />
       </Route>
       

@@ -1,5 +1,5 @@
 import {React} from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 export default function Admincategories(){
@@ -68,6 +68,7 @@ export default function Admincategories(){
             <th>Slug</th>
             <th>Products</th>
             <th>Date</th>
+            <th>Edit</th>
             <th>Delete</th>
             <th>Arrange</th>
             </tr>
@@ -78,6 +79,7 @@ export default function Admincategories(){
             <td>phones</td>
             <td>9</td>
             <td>10/06/2022</td>
+            <td><Link to='/admin/editcategory/62d2fe4da332443e9c52755a'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletecateg()}>Delete</button></td>
             <td><i className='fa fa-bars'/></td>
             </tr>
@@ -88,6 +90,7 @@ export default function Admincategories(){
             <td>phones</td>
             <td>8</td>
             <td>10/06/2022</td>
+            <td><Link to='/admin/editcategory/62d2fe4da332443e9c52755a'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletecateg()}>Delete</button></td>
             <td><i className='fa fa-bars'/></td>
             </tr>
@@ -98,6 +101,7 @@ export default function Admincategories(){
             <td>phones</td>
             <td>8</td>
             <td>10/06/2022</td>
+            <td><Link to='/admin/editcategory/62d2fe4da332443e9c52755a'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletecateg()}>Delete</button></td>
             <td><i className='fa fa-bars'/></td>
             </tr>
@@ -108,6 +112,7 @@ export default function Admincategories(){
             <td>phones</td>
             <td>8</td>
             <td>10/06/2022</td>
+            <td><Link to='/admin/editcategory/62d2fe4da332443e9c52755a'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletecateg()}>Delete</button></td>
             <td><i className='fa fa-bars'/></td>
             </tr>
