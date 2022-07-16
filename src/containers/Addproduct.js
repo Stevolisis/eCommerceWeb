@@ -33,19 +33,19 @@ export default function Addproduct({type}){
         e.preventDefault();
         const product={
             name:name.current.value,
-            category:'Nike',
+            category:["Musical Instrumentse","Niker","Nikeln"],
             stock:stock.current.value,
             regular_price:regular_price.current.value,
             sale_price:sale_price.current.value,
             product_details: 'Yeah Network Shit',
             img_link:img_link.current.value
         }
-
+console.log(product);
         try{
 
         const res=await axios.post('http://localhost:80/addproduct',{product},{withCredentials:true});
         let data=res.data.data;
-        if(data==='Error Occured'){
+        if(data==='Error Occured'||data==='Product Exist, pls choose another'||data==='Error Occured At Save'){
             Swal.fire(
                 'Successful!',
                 `Data Done: ${data}`,

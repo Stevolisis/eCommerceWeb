@@ -6,9 +6,9 @@ export default function Addcategory(){
     const addcategory=(()=>{
 
        const category={
-        name:'Nike',
-        slug:'nikebrand',
-        img_link:'Niketoolkit.jpg'
+        name:'Nikel',
+        slug:'nikelbrand',
+        img_link:'Nikeltoolkit.jpg'
        }
         axios.post('http://localhost:80/addcategory',{category},{withCredentials:true})
         .then(res=>{
