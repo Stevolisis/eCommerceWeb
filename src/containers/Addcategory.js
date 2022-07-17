@@ -1,23 +1,20 @@
-import {React,useState} from 'react';
+import {React,useRef,useState} from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
-import ImageUploading from 'react-images-uploading';
 
 export default function Addcategory(){
-    const [images, setImages] = useState([]);
-    const maxNumber = 69;
-
-    const onChange = (imageList, addUpdateIndex) => {
-        console.log(imageList, addUpdateIndex);
-        setImages(imageList);
-      };
+ const img_link=useRef();
 
     const addcategory=(()=>{
-        console.log(images)
+      console.log(img_link.current.value);
+
+      // const formData = new FormData();
+      // formData.append("img_link", img_link);
+
        const category={
-        name:'Rexona',
+        name:'Rexonal',
         slug:'Rexonabrand',
-        img_link:'Rexonatoolkit.jpg'
+        img_link:img_link.current.value
        }
        
         axios.post('http://localhost:80/addcategory',{category},{withCredentials:true})
@@ -64,49 +61,10 @@ export default function Addcategory(){
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Thumbnail(Image)</p>
-            <img src='/media3/advert6.jpg' alt='addcategimg'/>
+            <input type='file' accept='image/*' ref={img_link}/>
 
 
-            <ImageUploading
-        multiple
-        value={images}
-        onChange={onChange}
-        maxNumber={maxNumber}
-        dataURLKey="data_url"
-        className='upload'
-      >
-        {({
-          imageList,
-          onImageUpload,
-          onImageRemoveAll,
-          onImageUpdate,
-          onImageRemove,
-          isDragging,
-          dragProps,
-        }) => (
-          // write your building UI
-          <div className="upload__image-wrapper">
-            <button
-              style={isDragging ? { color: 'red' } : undefined}
-              onClick={onImageUpload}
-              {...dragProps}
-            >
-              Click or Drop Image here
-            </button>
-            &nbsp;
-            <button onClick={onImageRemoveAll}>Remove all images</button>
-            {imageList.map((image, index) => (
-              <div key={index} className="image-item">
-                <img src={image['data_url']} alt="" width="100" />
-                <div className="image-item__btn-wrapper">
-                  <button onClick={() => onImageUpdate(index)}>Update</button>
-                  <button onClick={() => onImageRemove(index)}>Remove</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </ImageUploading>
+
         </div>
         </div>
 
