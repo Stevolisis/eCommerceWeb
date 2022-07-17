@@ -13,7 +13,7 @@ export default function Editcategory(){
         img_link:'Rexonatttoolkit.jpg'
        }
        
-        axios.put(`http://localhost:80/editcategory/${id}`,{category},{withCredentials:true})
+        axios.patch(`http://localhost:80/editcategory/${id}`,{category},{withCredentials:true})
         .then(res=>{
             let data=res.data.data;
 

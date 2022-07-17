@@ -1,6 +1,6 @@
 {
   "name": "ecommerce",
-  "homepage":"https://ecommerce.stephcom.com.ng",
+  "homepage": "https://ecommerce.stephcom.com.ng",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-icons": "^4.4.0",
+    "react-images-uploading": "^3.1.7",
     "react-multi-select-component": "^4.2.9",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
