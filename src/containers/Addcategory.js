@@ -21,9 +21,9 @@ export default function Addcategory(){
         }).catch(err=>{
 
             Swal.fire(
-                'Successful!',
+                'Error!',
                 `Error Occured: ${err}`,
-                'success'
+                'warning'
               )
         });
         });
@@ -54,11 +54,8 @@ export default function Addcategory(){
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Thumbnail(Image)</p>
-            <input type='file' accept='.jpg,.png' name='thumbnail'/>
+            <input type='file' name='thumbnail'/>
 
-<img src='http://localhost/uploads/1658169470694_cart-abandonment-solutions-510x536.png'
-alt='checkImage'
-/>
 
         </div>
         </div>
