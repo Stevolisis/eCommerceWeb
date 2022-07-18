@@ -1,23 +1,15 @@
-import {React,useRef,useState} from 'react';
+import {React} from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
 export default function Addcategory(){
- const img_link=useRef();
 
-    const addcategory=(()=>{
-      console.log(img_link.current.value);
+    const addcategory=((e)=>{
+        e.preventDefault();
+    const formData=new FormData(e.target);
+       console.log(formData);
 
-      // const formData = new FormData();
-      // formData.append("img_link", img_link);
-
-       const category={
-        name:'Rexonal',
-        slug:'Rexonabrand',
-        img_link:img_link.current.value
-       }
-       
-        axios.post('http://localhost:80/addcategory',{category},{withCredentials:true})
+        axios.post('http://localhost:80/addcategory',formData,{withCredentials:true})
         .then(res=>{
             let data=res.data.data;
 
@@ -42,18 +34,19 @@ export default function Addcategory(){
         <div className='userorderheading'>
         <p>Add Category</p>
         </div>
+        <form onSubmit={addcategory}>
         <div className='addcategcon'>
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Name</p>
-            <input type='text' />
+            <input type='text' name='name'/>
             </div>
         </div>
         
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Slug</p>
-            <input type='text'/><p>the 'slug is the URL-friendly version of the 
+            <input type='text' name='slug'/><p>the 'slug is the URL-friendly version of the 
                 name. It should contain only lowercase letters, numbers and hyphens'</p>
         </div>
         </div>
@@ -61,17 +54,20 @@ export default function Addcategory(){
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Thumbnail(Image)</p>
-            <input type='file' accept='image/*' ref={img_link}/>
+            <input type='file' accept='.jpg,.png' name='thumbnail'/>
 
-
+<img src='http://localhost/uploads/1658169470694_cart-abandonment-solutions-510x536.png'
+alt='checkImage'
+/>
 
         </div>
         </div>
 
         <div className='usereditbtn'>
-        <button onClick={()=>addcategory()}>ADD</button>
+        <button >ADD</button>
         </div>
-        </div>            
+        </div>
+        </form>            
         </div>
         </>
     )
