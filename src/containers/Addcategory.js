@@ -9,7 +9,7 @@ export default function Addcategory(){
     const formData=new FormData(e.target);
        console.log(formData);
 
-        axios.post('http://localhost:80/addcategory',formData,{withCredentials:true})
+        axios.post('http://localhost:80/categories/addcategory',formData,{withCredentials:true})
         .then(res=>{
             let data=res.data.data;
 
@@ -55,7 +55,6 @@ export default function Addcategory(){
             <div className='admineditname'>
             <p>Thumbnail(Image)</p>
             <input type='file' name='thumbnail'/>
-
 
         </div>
         </div>

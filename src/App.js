@@ -72,7 +72,7 @@ function App() {
       {/* <Route path='/' element={<Slidercon />} />
       <Route path='/chart' element={<Chartcon />} /> */}
       <Route path='/' element={<Grandpro />} />
-      <Route path='/categories' element={<Grandprocateg />} />
+      <Route path='/products' element={<Grandprocateg />} />
       <Route path='/product' element={<Grandproitem />} />
       <Route path='cart' element={<Grandprocart />} />
       <Route path='checkout' element={<Checkout />} />

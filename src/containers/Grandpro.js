@@ -153,7 +153,7 @@ prevslide={prevslide}
 
 
 <div className='slidecateg'>
-<Link to='/categories'>
+<Link to='/products'>
 <div className='slidecategimg'>
 <img src='/media3/pexel6.jpg' alt='slidecateg'/>
 </div>
@@ -166,7 +166,7 @@ prevslide={prevslide}
 
 
 <div className='slidecateg'>
-<Link to='/categories'>
+<Link to='/products'>
 <div className='slidecategimg'>
 <img src='/media3/pexel7.jpg' alt='slidecateg'/>
 </div>
@@ -178,7 +178,7 @@ prevslide={prevslide}
 </div>
 
 <div className='slidecateg'>
-<Link to='/categories'>
+<Link to='/products'>
 <div className='slidecategimg'>
 <img src='/media3/pexel8.jpg' alt='slidecateg'/>
 </div>
@@ -190,7 +190,7 @@ prevslide={prevslide}
 </div>
 
 <div className='slidecateg'>
-<Link to='/categories'>
+<Link to='/products'>
 <div className='slidecategimg'>
 <img src='/media3/pexel9.jpg' alt='slidecateg'/>
 </div>
@@ -203,7 +203,7 @@ prevslide={prevslide}
 
 
 <div className='slidecateg'>
-<Link to='/categories'>
+<Link to='/products'>
 <div className='slidecategimg'>
 <img src='/media3/pexel10.jpg' alt='slidecateg'/>
 </div>
@@ -216,7 +216,7 @@ prevslide={prevslide}
 
 
 <div className='slidecateg'>
-<Link to='/categories'>
+<Link to='/products'>
 <div className='slidecategimg'>
 <img src='/media3/pexel11.jpg' alt='slidecateg'/>
 </div>
@@ -228,7 +228,7 @@ prevslide={prevslide}
 </div>
 
 <div className='slidecateg'>
-<Link to='/categories'>
+<Link to='/products'>
 <div className='slidecategimg'>
 <img src='/media3/pexel12.jpg' alt='slidecateg'/>
 </div>
@@ -240,7 +240,7 @@ prevslide={prevslide}
 </div>
 
 <div className='slidecateg'>
-<Link to='/categories'>
+<Link to='/products'>
 <div className='slidecategimg'>
 <img src='/media3/pexel13.jpg' alt='slidecateg'/>
 </div>
