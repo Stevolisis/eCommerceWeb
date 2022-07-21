@@ -1,14 +1,15 @@
-import {React} from 'react';
+import {React, useState} from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 
 export default function Addcategory(){
+    const [imgpreview,setImgpreview]=useState('');
 
-    const addcategory=((e)=>{
+    const handleSubmit=((e)=>{
         e.preventDefault();
     const formData=new FormData(e.target);
        console.log(formData);
-
+   
         axios.post('http://localhost:80/categories/addcategory',formData,{withCredentials:true})
         .then(res=>{
             let data=res.data.data;
@@ -28,13 +29,17 @@ export default function Addcategory(){
         });
         });
 
+        function imgPreview(e){
+            setImgpreview(URL.createObjectURL(e.target.files[0]));
+           }
+
     return(
         <>
         <div className='admindashcon'>
         <div className='userorderheading'>
         <p>Add Category</p>
         </div>
-        <form onSubmit={addcategory}>
+        <form onSubmit={handleSubmit}>
         <div className='addcategcon'>
         <div className='admineditnamecon'>
             <div className='admineditname'>
@@ -54,7 +59,12 @@ export default function Addcategory(){
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Thumbnail(Image)</p>
-            <input type='file' name='thumbnail'/>
+
+            <div className='previewimg'>
+            <img src={imgpreview} alt='addcategimg'/>
+            </div>
+
+            <input type='file' name='thumbnail' onChange={imgPreview}/>
 
         </div>
         </div>
