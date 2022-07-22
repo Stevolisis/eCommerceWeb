@@ -1,18 +1,44 @@
-import {React,useState} from 'react';
+import {React,useEffect,useState} from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
 export default function Editcategory(){
     const {id}=useParams();
-    const [name,setName]=useState('gfzfzcr')
-    const [slug,setSlug]=useState('gf')
+    const [name,setName]=useState('')
+    const [slug,setSlug]=useState('')
     const [imgpreview,setImgpreview]=useState('http://localhost:80/media/1658441585321Screenshot_20220612-225205.png');
 
+    const loadCategory=()=>{
+        axios.get(`http://localhost:80/categories/getcategory/${id}`)
+        .then(res=>{
+            let category=res.data.data;
+            if(category==='Error Occured'){
+                Swal.fire(
+                    'Error After Fetch!',
+                    `Error Occured: ${category}`,
+                    'warning'
+                  )
+            }else{
+                setName(category.name);
+                setSlug(category.slug);
+                setImgpreview(category.img_link);
+            }
+
+        }).catch(err=>{
+            Swal.fire(
+                'Error At Axios!',
+                `Error Occured: ${err}`,
+                'warning'
+              )
+        })
+    }
+
     const handleSubmit=((e)=>{
+        e.preventDefault();
         const formData=new FormData(e.target);
 
-        axios.patch(`http://localhost:80/categories/editcategory/${id}`,formData,{withCredentials:true})
+        axios.put(`http://localhost:80/categories/editcategory/${id}`,formData,{withCredentials:true})
         .then(res=>{
             let data=res.data.data;
 
@@ -36,6 +62,9 @@ export default function Editcategory(){
             setImgpreview(URL.createObjectURL(e.target.files[0]));
            }
 
+           useEffect(()=>{
+            loadCategory();
+           },[])
 
     return(
         <>

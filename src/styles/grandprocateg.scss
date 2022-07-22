@@ -204,7 +204,9 @@ cursor: pointer;
     }
   
     .productimg2{
-
+        width:198px;
+        height: 170px;
+        background: $color105;
         img{
             width:198px;
             height: 170px;
@@ -218,19 +220,24 @@ cursor: pointer;
     display:flex;
     flex-direction: column;
     align-items: center;
-    padding: 8px;
-    width: 90%;
+    padding: 4px 0 8px 0;
+    width: 100%;
+    box-sizing: border-box;
     .productname2{
         font-size: 12px;
         text-align: left;
         overflow-x: hidden;
         width: 100%;
+        padding: 0 7px;
+        box-sizing: border-box;
     }
     
     .productprices2{
         font-size: 13px;
         width: 100%;
-       
+        padding: 0 7px;
+        box-sizing: border-box;
+
         span{
             font-family: font3 !important;
         }
@@ -331,7 +338,7 @@ cursor: pointer;
         width: 26%;
         justify-content: center;
         align-items: center;
-        background: $color104;
+        background: $color30;
         padding:9px 5px;
         border-radius: 5px;
         color: $color40;
@@ -371,7 +378,8 @@ margin: 10px;
     }
   
     .productimg2{
-
+        width:150px;
+        height: 155px;
         img{
             width:150px;
             height: 155px;

@@ -435,9 +435,6 @@ export default function Grandprocart(){
 </div>
 </div>
 
-<div className='section1'>
-
-</div>    
 
 
 

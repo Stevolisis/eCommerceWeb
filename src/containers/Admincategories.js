@@ -79,7 +79,7 @@ export default function Admincategories(){
             <td>phones</td>
             <td>9</td>
             <td>10/06/2022</td>
-            <td><Link to='/admin/editcategory/62d2fe4da332443e9c52755a'><i className='fa fa-edit'/></Link></td>
+            <td><Link to='/admin/editcategory/62d9cf711b4aea345c1d079a'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletecateg()}>Delete</button></td>
             <td><i className='fa fa-bars'/></td>
             </tr>
@@ -90,7 +90,7 @@ export default function Admincategories(){
             <td>phones</td>
             <td>8</td>
             <td>10/06/2022</td>
-            <td><Link to='/admin/editcategory/62d2fe4da332443e9c52755a'><i className='fa fa-edit'/></Link></td>
+            <td><Link to='/admin/editcategory/62d9cf711b4aea345c1d079a'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletecateg()}>Delete</button></td>
             <td><i className='fa fa-bars'/></td>
             </tr>
@@ -101,7 +101,7 @@ export default function Admincategories(){
             <td>phones</td>
             <td>8</td>
             <td>10/06/2022</td>
-            <td><Link to='/admin/editcategory/62d2fe4da332443e9c52755a'><i className='fa fa-edit'/></Link></td>
+            <td><Link to='/admin/editcategory/62d9cf711b4aea345c1d079a'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletecateg()}>Delete</button></td>
             <td><i className='fa fa-bars'/></td>
             </tr>
@@ -112,7 +112,7 @@ export default function Admincategories(){
             <td>phones</td>
             <td>8</td>
             <td>10/06/2022</td>
-            <td><Link to='/admin/editcategory/62d2fe4da332443e9c52755a'><i className='fa fa-edit'/></Link></td>
+            <td><Link to='/admin/editcategory/62d9cf711b4aea345c1d079a'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletecateg()}>Delete</button></td>
             <td><i className='fa fa-bars'/></td>
             </tr>
