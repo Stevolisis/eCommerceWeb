@@ -6,13 +6,9 @@ import axios from 'axios';
 
 export default function Addproduct({type}){
     const editorRef=useRef();
-    const name=useRef();
-    const stock=useRef();
-    const regular_price=useRef();
-    const sale_price=useRef();
     const product_details=useRef();
-    const img_link=useRef();
     const [selected,setSelected]=useState([]);
+    const [imgpreview,setImgpreview]=useState('');
 
 
     const options = [
@@ -31,19 +27,13 @@ export default function Addproduct({type}){
 
      async function handleSumbit(e){
         e.preventDefault();
-        const product={
-            name:name.current.value,
-            category:["Musical Instrumentse","Niker","Nikel"],
-            stock:stock.current.value,
-            regular_price:regular_price.current.value,
-            sale_price:sale_price.current.value,
-            product_details: 'Yeah Network Shit',
-            img_link:img_link.current.value
-        }
-console.log(product);
+        const formData=new FormData(e.target)
+        formData.append('category',selected);
+        formData.append('product_details',product_details);
+
         try{
 
-        const res=await axios.post('http://localhost:80/addproduct',{product},{withCredentials:true});
+        const res=await axios.post('http://localhost:80/products/addproduct',formData,{withCredentials:true});
         let data=res.data.data;
         if(data==='Error Occured'||data==='Invalid Category'||data==='Product Exist, pls choose another'||data==='Error Occured At Save'){
             Swal.fire(
@@ -71,6 +61,10 @@ console.log(product);
      }
 
 
+     function imgPreview(e){
+        setImgpreview(URL.createObjectURL(e.target.files[0]));
+       }
+
     return(
         <>
         <div className='admindashcon'>
@@ -82,7 +76,7 @@ console.log(product);
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Name</p>
-            <input ref={name} type='text' />
+            <input name='name' type='text' />
             </div>
         </div>
         
@@ -101,21 +95,21 @@ console.log(product);
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Count in Stock</p>
-            <input ref={stock} type='number'/>
+            <input name='stock' type='number'/>
             </div>
         </div>
 
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Regular price</p>
-            <input ref={regular_price} type='number'/>
+            <input name='regular_price' type='number'/>
             </div>
         </div>
 
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Sale Price</p>
-            <input ref={sale_price} type='number'/>
+            <input name='sale_price' type='number'/>
             </div>
         </div>
 
@@ -145,12 +139,23 @@ console.log(product);
     </div>
         }
        
+       <div className='admineditnamecon'>
+            <div className='admineditname'>
+            <p>Status</p>
+            <select name='status'>
+            <option defaultValue>Active</option>
+            <option>Deactive</option>
+            </select>
+            </div>
+        </div>
 
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Thumbnail(Image)</p>
-            <img src='/media3/advert6.jpg' alt='addcategimg'/>
-            <input ref={img_link} type='file'/>
+            <div className='previewimg'>
+            <img src={imgpreview} alt='addcategimg'/>
+            </div>
+            <input name='thumbnail' type='file' onChange={imgPreview}/>
         </div>
         </div>
 

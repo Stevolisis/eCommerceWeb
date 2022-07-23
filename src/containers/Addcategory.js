@@ -58,6 +58,16 @@ export default function Addcategory(){
 
         <div className='admineditnamecon'>
             <div className='admineditname'>
+            <p>Status</p>
+            <select name='status'>
+            <option defaultValue>Active</option>
+            <option>Deactive</option>
+            </select>
+            </div>
+        </div>
+
+        <div className='admineditnamecon'>
+            <div className='admineditname'>
             <p>Thumbnail(Image)</p>
 
             <div className='previewimg'>

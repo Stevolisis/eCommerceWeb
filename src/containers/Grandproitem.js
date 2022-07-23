@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import Accordion from './Accordion'
 import Reviews from './Reviews'
 import Swal from 'sweetalert2';
-import { faHeart,faBell,faStar } from '@fortawesome/free-regular-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+// import { faHeart,faBell,faStar } from '@fortawesome/free-regular-svg-icons'
+// import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import Ratings from './Ratings';
 
 export default function Grandproitem(){
