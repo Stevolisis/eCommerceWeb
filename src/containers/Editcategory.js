@@ -10,7 +10,7 @@ export default function Editcategory(){
     const [imgpreview,setImgpreview]=useState('http://localhost:80/media/1658441585321Screenshot_20220612-225205.png');
 
     const loadCategory=()=>{
-        axios.get(`http://localhost:80/categories/getcategory/${id}`)
+        axios.get(`http://localhost:80/categories/getcategoryforedit/${id}`)
         .then(res=>{
             let category=res.data.data;
             if(category==='Error Occured'){

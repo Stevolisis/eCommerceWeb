@@ -9,6 +9,7 @@ export default function Addproduct({type}){
     const product_details=useRef();
     const [selected,setSelected]=useState([]);
     const [imgpreview,setImgpreview]=useState('');
+    const [imggallerypreview,setImggallerypreview]=useState([]);
 
 
     const options = [
@@ -26,10 +27,11 @@ export default function Addproduct({type}){
       ];
 
      async function handleSumbit(e){
+        console.log(selected[0].value);
         e.preventDefault();
         const formData=new FormData(e.target)
-        formData.append('category',selected);
-        formData.append('product_details',product_details);
+        formData.append('category',JSON.stringify(selected));
+        formData.append('product_details',JSON.stringify(product_details));
 
         try{
 
@@ -65,6 +67,17 @@ export default function Addproduct({type}){
         setImgpreview(URL.createObjectURL(e.target.files[0]));
        }
 
+    function imggalleryPreview(e){
+        setImggallerypreview([])
+        const toSet=Array.from(e.target.files);
+        toSet.forEach(set=>{
+            setImggallerypreview(oldstat=>[...oldstat,URL.createObjectURL(set)])
+        });
+}
+
+
+
+
     return(
         <>
         <div className='admindashcon'>
@@ -76,7 +89,7 @@ export default function Addproduct({type}){
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Name</p>
-            <input name='name' type='text' />
+            <input name='name' type='text'/>
             </div>
         </div>
         
@@ -153,9 +166,27 @@ export default function Addproduct({type}){
             <div className='admineditname'>
             <p>Thumbnail(Image)</p>
             <div className='previewimg'>
-            <img src={imgpreview} alt='addcategimg'/>
+            <img src={imgpreview} alt='addcoverimg'/>
             </div>
             <input name='thumbnail' type='file' onChange={imgPreview}/>
+        </div>
+        </div>
+
+        <div className='admineditnamecon'>
+            <div className='admineditname'>
+            <p>Image Gallery</p>
+            <div className='previewimg2' >
+            {
+            imggallerypreview.map((imgprev,i)=>{
+                return (
+            <div className='previewimg' key={i}>
+            <img src={imgprev} alt='addimgGallery'/>
+            </div>
+                )
+            })
+            }
+            </div>
+            <input name='img_gallery' type='file' multiple onChange={imggalleryPreview} />
         </div>
         </div>
 

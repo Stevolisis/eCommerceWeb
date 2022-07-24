@@ -74,11 +74,6 @@
 
 .admineditname{
     width: 100%;
-
-    img{
-        width: 60px;
-        height: 60px;
-    }
 }
 
 .dropdown-container{
@@ -118,9 +113,24 @@ display: flex;
       }
 }
 
-.previewimg img{
-margin: 4px;
-object-fit: contain;
+.previewimg2{
+display: flex;
+box-sizing: border-box;
+overflow-x: auto;
+}
+.previewimg{
+    background: $color105;
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    margin: 4px;
+    display: flex;
+
+    img{
+        object-fit: contain;
+        width: 60px;
+        height: 60px;
+    }
 }
 
 
