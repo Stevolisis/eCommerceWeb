@@ -2,13 +2,17 @@ import {React, useRef,useState,useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import {Editor} from '@tinymce/tinymce-react';
 import { MultiSelect } from 'react-multi-select-component';
+import Select from 'react-select';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default function Editproduct(){
     const {id}=useParams();
     const editorRef=useRef();
-    const [selected,setSelected]=useState([]);
+    const [selected,setSelected]=useState([        { value: 'Nike', label: 'Nike',complete:true },
+    { value: 'gafia', label: 'gafia' }]);
+    const [selected2,setSelected2]=useState([        { value: 'Nike', label: 'Nike',complete:true },
+    { value: 'gafia', label: 'gafia' }]);
     const [name,setName]=useState([]);
     const [stock,setStock]=useState([]);
     const [regular_price,setRegular_price]=useState([]);
@@ -18,7 +22,7 @@ export default function Editproduct(){
 
 
     const options = [
-        { value: 'Nike', label: 'Nike' },
+        { value: 'Nike', label: 'Nike',complete:true },
         { value: 'gafia', label: 'gafia' },
         { value: 'Rexona', label: 'Rexona' },
         { value: 'Jeep', label: 'Jeep' }, 
@@ -99,6 +103,20 @@ useEffect(()=>{
             onChange={setSelected}
             labelledBy='Select'
             />
+            </div>
+        </div>
+
+        <div className='admineditnamecon2'>
+            <div className='admineditname'>
+            <p>Category</p>
+
+            <Select
+            options={options}
+            onChange={setSelected2}
+            defaultValue={selected2}
+            isMulti
+            />
+
             </div>
         </div>
 
