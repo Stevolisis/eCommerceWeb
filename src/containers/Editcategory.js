@@ -92,8 +92,10 @@ export default function Editcategory(){
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Thumbnail(Image)</p>
+            <div className='previewimg2'>
             <div className='previewimg'>
             <img src={imgpreview} alt='addcategimg'/>
+            </div>
             </div>
             <input type='file' name='thumbnail' onChange={imgPreview}/>
         </div>

@@ -6,24 +6,21 @@ import axios from 'axios';
 
 export default function Addproduct({type}){
     const editorRef=useRef();
-    const product_details=useRef();
     const [selected,setSelected]=useState([]);
-    const [imgpreview,setImgpreview]=useState('');
     const [imggallerypreview,setImggallerypreview]=useState([]);
 
-
     const options = [
-        { value: 'categories', label: 'categories' },
-        { value: 'products', label: 'products' },
-        { value: 'users', label: 'users' },
-        { value: 'staffs', label: 'staffs' }, 
-        { value: 'SMS Management', label: 'SMS Management' },
-        { value: 'Email Management', label: 'Email Management' }, 
-        { value: 'Banner Images', label: 'Banner Images' }, 
-        { value: 'Customer Support', label: 'Customer Support' }, 
-        { value: 'Events & Coupons', label: 'Events & Coupons' }, 
-        { value: 'Analytics', label: 'Analytics' }, 
-        { value: 'Payment Management', label: 'Payment Management' } 
+        { value: 'Nike', label: 'categories' },
+        { value: 'gafia', label: 'products' },
+        { value: 'Rexona', label: 'users' },
+        { value: 'Jeep', label: 'staffs' }, 
+        { value: 'Tesla', label: 'SMS Management' },
+        { value: 'Jordan', label: 'Email Management' }, 
+        { value: 'Gucci', label: 'Banner Images' }, 
+        { value: "D'or", label: 'Customer Support' }, 
+        { value: 'Italy', label: 'Events & Coupons' }, 
+        { value: 'Haas', label: 'Analytics' }, 
+        { value: 'Ford', label: 'Payment Management' } 
       ];
 
      async function handleSumbit(e){
@@ -31,7 +28,6 @@ export default function Addproduct({type}){
         e.preventDefault();
         const formData=new FormData(e.target)
         formData.append('category',JSON.stringify(selected));
-        formData.append('product_details',JSON.stringify(product_details));
 
         try{
 
@@ -49,7 +45,7 @@ export default function Addproduct({type}){
                 `Data Done: ${data}`,
                 'success'
             );
-            e.target.reset();
+            //e.target.reset();
         }
       
 
@@ -62,18 +58,13 @@ export default function Addproduct({type}){
         }
      }
 
-
-     function imgPreview(e){
-        setImgpreview(URL.createObjectURL(e.target.files[0]));
-       }
-
     function imggalleryPreview(e){
         setImggallerypreview([])
         const toSet=Array.from(e.target.files);
         toSet.forEach(set=>{
             setImggallerypreview(oldstat=>[...oldstat,URL.createObjectURL(set)])
         });
-}
+    }
 
 
 
@@ -126,16 +117,7 @@ export default function Addproduct({type}){
             </div>
         </div>
 
-        {type==='event'?
-         <div className='admineditnamecon'>
-         <div className='admineditname'>
-         <p>Product details</p>
-         <div className='editorcon'>
-           <input ref={product_details} type='disabled' value='Flash Deals'/>
-         </div>
-         </div>
-         </div>
-        :
+
         <div className='admineditnamecon'>
         <div className='admineditname'>
         <p>Product details</p>
@@ -150,7 +132,6 @@ export default function Addproduct({type}){
         {/* <textarea/> */}
         </div>
     </div>
-        }
        
        <div className='admineditnamecon'>
             <div className='admineditname'>
@@ -162,15 +143,6 @@ export default function Addproduct({type}){
             </div>
         </div>
 
-        <div className='admineditnamecon'>
-            <div className='admineditname'>
-            <p>Thumbnail(Image)</p>
-            <div className='previewimg'>
-            <img src={imgpreview} alt='addcoverimg'/>
-            </div>
-            <input name='thumbnail' type='file' onChange={imgPreview}/>
-        </div>
-        </div>
 
         <div className='admineditnamecon'>
             <div className='admineditname'>

@@ -84,7 +84,7 @@ export default function Adminproducts(){
             <td>Bags</td>
             <td>5</td>
             <td>10/06/2022</td>
-            <td><Link to='/admin/editproduct/hjg242'><i className='fa fa-edit'/></Link></td>
+            <td><Link to='/admin/editproduct/62de9dbcebede1006c06391e'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletespec()}>Delete</button></td>
             </tr>
 
@@ -97,7 +97,7 @@ export default function Adminproducts(){
             <td>Shoes</td>
             <td>5</td>
             <td>10/06/2022</td>
-            <td><Link to='/admin/editproduct/hjg242'><i className='fa fa-edit'/></Link></td>
+            <td><Link to='/admin/editproduct/62de9dbcebede1006c06391e'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletespec()}>Delete</button></td>
             </tr>
 
@@ -110,7 +110,7 @@ export default function Adminproducts(){
             <td>Home Appliances</td>
             <td>5</td>
             <td>10/06/2022</td>
-            <td><Link to='/admin/editproduct/hjg242'><i className='fa fa-edit'/></Link></td>
+            <td><Link to='/admin/editproduct/62de9dbcebede1006c06391e'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletespec()}>Delete</button></td>
             </tr>
 
@@ -123,7 +123,7 @@ export default function Adminproducts(){
             <td>Tablets</td>
             <td>5</td>
             <td>10/06/2022</td>
-            <td><Link to='/admin/editproduct/hjg242'><i className='fa fa-edit'/></Link></td>
+            <td><Link to='/admin/editproduct/62de9dbcebede1006c06391e'><i className='fa fa-edit'/></Link></td>
             <td><button onClick={()=>deletespec()}>Delete</button></td>
             </tr>
 
