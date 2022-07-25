@@ -2,38 +2,22 @@ import {React, useRef,useState,useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import {Editor} from '@tinymce/tinymce-react';
 import { MultiSelect } from 'react-multi-select-component';
-import Select from 'react-select';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default function Editproduct(){
     const {id}=useParams();
     const editorRef=useRef();
-    const [selected,setSelected]=useState([        { value: 'Nike', label: 'Nike',complete:true },
-    { value: 'gafia', label: 'gafia' }]);
-    const [selected2,setSelected2]=useState([        { value: 'Nike', label: 'Nike',complete:true },
-    { value: 'gafia', label: 'gafia' }]);
+    const [selected,setSelected]=useState([]);
     const [name,setName]=useState([]);
     const [stock,setStock]=useState([]);
     const [regular_price,setRegular_price]=useState([]);
     const [sale_price,setSale_price]=useState([]);
-    const [status,setStatus]=useState([]);
+    const [options,setOptions]=useState([]);
     const [imggallerypreview,setImggallerypreview]=useState([]);
+    const cancelalert=useRef(true)
 
 
-    const options = [
-        { value: 'Nike', label: 'Nike',complete:true },
-        { value: 'gafia', label: 'gafia' },
-        { value: 'Rexona', label: 'Rexona' },
-        { value: 'Jeep', label: 'Jeep' }, 
-        { value: 'Tesla', label: 'Tesla' },
-        { value: 'Jordan', label: 'Jordan' }, 
-        { value: 'Gucci', label: 'Gucci' }, 
-        { value: "D'or", label: "D'or" }, 
-        { value: 'Italy', label: 'Italy' }, 
-        { value: 'Haas', label: 'Haas' }, 
-        { value: 'Ford', label: 'Ford' } 
-      ];
 
       const loadProduct=()=>{
         axios.get(`http://localhost:80/products/getproductforedit/${id}`)
@@ -50,8 +34,10 @@ export default function Editproduct(){
                 setStock(product.stock);
                 setRegular_price(product.regular_price);
                 setSale_price(product.sale_price);
-                setStatus(product.status);
                 setImggallerypreview(product.img_gallery);
+                product.category.forEach(option=>{
+                setSelected(oldOption=>[...oldOption,{value:option.name, label:option.name}])
+                })                
             }
 
         }).catch(err=>{
@@ -63,6 +49,33 @@ export default function Editproduct(){
         })
     }
 
+    const loadCategories=()=>{
+        axios.get('http://localhost:80/categories/getcategories')
+        .then(res=>{
+            let response=res.data.data;
+            console.log(response);
+            if(response==='Error Occured'){
+                Swal.fire(
+                    'Error After Fetch!',
+                    `Error Occured: ${response}`,
+                    'warning'
+                  )
+            }else{
+               response.forEach(option=>{
+                setOptions(oldOption=>[...oldOption,{value:option.name, label:option.name}])
+               })
+
+            }
+        }).catch(err=>{
+            Swal.fire(
+                'Error At Axios2!',
+                `Error Occured: ${err}`,
+                'warning'
+              )
+        })
+    }
+
+    console.log(options)
 
       
     function imggalleryPreview(e){
@@ -74,7 +87,12 @@ export default function Editproduct(){
 }
 
 useEffect(()=>{
-    loadProduct();
+    if(cancelalert.current){
+        cancelalert.current=false;
+        loadProduct();
+        loadCategories();
+    }
+
    },[])
 
 
@@ -103,20 +121,6 @@ useEffect(()=>{
             onChange={setSelected}
             labelledBy='Select'
             />
-            </div>
-        </div>
-
-        <div className='admineditnamecon2'>
-            <div className='admineditname'>
-            <p>Category</p>
-
-            <Select
-            options={options}
-            onChange={setSelected2}
-            defaultValue={selected2}
-            isMulti
-            />
-
             </div>
         </div>
 
@@ -159,8 +163,8 @@ useEffect(()=>{
             <div className='admineditname'>
             <p>Status</p>
             <select name='status'>
-            <option defaultValue>Active</option>
-            <option>Deactive</option>
+            <option >Active</option>
+            <option defaultValue>Deactive</option>
             </select>
             </div>
         </div>
