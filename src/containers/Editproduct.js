@@ -112,7 +112,6 @@ export default function Editproduct(){
             
     }
 
-    console.log(options)
 
       
     function imggalleryPreview(e){
@@ -126,8 +125,8 @@ export default function Editproduct(){
 useEffect(()=>{
     if(cancelalert.current){
         cancelalert.current=false;
-        loadProduct();
         loadCategories();
+        loadProduct();
     }
 
    },[])

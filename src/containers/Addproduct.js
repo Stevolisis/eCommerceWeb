@@ -1,4 +1,4 @@
-import {React, useRef,useState} from 'react';
+import {React, useRef,useState,useEffect} from 'react';
 import {Editor} from '@tinymce/tinymce-react';
 import { MultiSelect } from 'react-multi-select-component';
 import Swal from 'sweetalert2';
@@ -7,55 +7,70 @@ import axios from 'axios';
 export default function Addproduct({type}){
     const editorRef=useRef();
     const [selected,setSelected]=useState([]);
+    const [options,setOptions]=useState([]);
     const [imggallerypreview,setImggallerypreview]=useState([]);
+    const cancelalert=useRef(true)
 
-    const options = [
-        { value: 'Nike', label: 'categories' },
-        { value: 'gafia', label: 'products' },
-        { value: 'Rexona', label: 'users' },
-        { value: 'Jeep', label: 'staffs' }, 
-        { value: 'Tesla', label: 'SMS Management' },
-        { value: 'Jordan', label: 'Email Management' }, 
-        { value: 'Gucci', label: 'Banner Images' }, 
-        { value: "D'or", label: 'Customer Support' }, 
-        { value: 'Italy', label: 'Events & Coupons' }, 
-        { value: 'Haas', label: 'Analytics' }, 
-        { value: 'Ford', label: 'Payment Management' } 
-      ];
 
-     async function handleSumbit(e){
+    const loadCategories=()=>{
+        axios.get('http://localhost:80/categories/getcategories')
+        .then(res=>{
+            let response=res.data.data;
+            console.log(response);
+            if(response==='Error Occured'){
+                Swal.fire(
+                    'Error After Fetch!',
+                    `Error Occured: ${response}`,
+                    'warning'
+                  )
+            }else{
+               response.forEach(option=>{
+                setOptions(oldOption=>[...oldOption,{value:option.name, label:option.name}])
+               })
+
+            }
+        }).catch(err=>{
+            Swal.fire(
+                'Error At Axios2!',
+                `Error Occured: ${err}`,
+                'warning'
+              )
+        })
+    }
+
+      function handleSumbit(e){
         console.log(selected[0].value);
         e.preventDefault();
         const formData=new FormData(e.target)
         formData.append('category',JSON.stringify(selected));
 
-        try{
-
-        const res=await axios.post('http://localhost:80/products/addproduct',formData,{withCredentials:true});
-        let data=res.data.data;
-        if(data==='Error Occured'||data==='Invalid Category'||data==='Product Exist, pls choose another'||data==='Error Occured At Save'){
-            Swal.fire(
-                'Error!',
-                `Data Done: ${data}`,
-                'warning'
-            );
-        }else{
-            Swal.fire(
-                'Successful!',
-                `Data Done: ${data}`,
-                'success'
-            );
-            //e.target.reset();
-        }
-      
-
-        }catch(err){
+        axios.post('http://localhost:80/products/addproduct',formData,{withCredentials:true})
+        .then(res=>{
+            let data=res.data.data;
+            if(data==='Error Occured'||data==='Invalid Category'||data==='Product Exist, pls choose another'||data==='Error Occured At Save'){
+                Swal.fire(
+                    'Error!',
+                    `Data Done: ${data}`,
+                    'warning'
+                );
+            }else{
+                Swal.fire(
+                    'Successful!',
+                    `Data Done: ${data}`,
+                    'success'
+                );
+                //e.target.reset();
+            }
+        
+        }).catch(err=>{
             Swal.fire(
                 'Error!',
                 `Error In Front ${err}`,
                 'warning'
               )
-        }
+        })  
+   
+
      }
 
     function imggalleryPreview(e){
@@ -68,6 +83,13 @@ export default function Addproduct({type}){
 
 
 
+    useEffect(()=>{
+        if(cancelalert.current){
+            cancelalert.current=false;
+            loadCategories();
+        }
+    
+       },[])
 
     return(
         <>
