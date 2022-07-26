@@ -15,9 +15,9 @@ export default function Editproduct(){
     const [sale_price,setSale_price]=useState([]);
     const [status,setStatus]=useState([]);
     const [options,setOptions]=useState([]);
+    const [initialValue,setInitialValue]=useState('<a href="www.google.com">Hi Bro</a>');
     const [imggallerypreview,setImggallerypreview]=useState([]);
     const cancelalert=useRef(true)
-
 
 
       const loadProduct=()=>{
@@ -77,9 +77,10 @@ export default function Editproduct(){
         })
     }
 
-
     function handleSumbit(e){
         e.preventDefault();
+        console.log(editorRef.current.getContent())
+
         const formData=new FormData(e.target);
         formData.append('category',JSON.stringify(selected));
 
@@ -190,6 +191,7 @@ useEffect(()=>{
                 init={{
                     menubar:false
                 }}
+                initialValue={initialValue}
                 />
             </div>
             </div>
