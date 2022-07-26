@@ -13,6 +13,7 @@ export default function Editproduct(){
     const [stock,setStock]=useState([]);
     const [regular_price,setRegular_price]=useState([]);
     const [sale_price,setSale_price]=useState([]);
+    const [status,setStatus]=useState([]);
     const [options,setOptions]=useState([]);
     const [imggallerypreview,setImggallerypreview]=useState([]);
     const cancelalert=useRef(true)
@@ -34,6 +35,7 @@ export default function Editproduct(){
                 setStock(product.stock);
                 setRegular_price(product.regular_price);
                 setSale_price(product.sale_price);
+                setStatus(product.status);
                 setImggallerypreview(product.img_gallery);
                 product.category.forEach(option=>{
                 setSelected(oldOption=>[...oldOption,{value:option.name, label:option.name}])
@@ -75,6 +77,41 @@ export default function Editproduct(){
         })
     }
 
+
+    function handleSumbit(e){
+        e.preventDefault();
+        const formData=new FormData(e.target);
+        formData.append('category',JSON.stringify(selected));
+
+            axios.put(`http://localhost:80/products/editproduct/${id}`,formData,{withCredentials:true})
+            .then(res=>{
+                let data=res.data.data;
+                if(data==='Error Occured'||data==='Invalid Category'||data==='Product Exist, pls choose another'||data==='Error Occured At Save'){
+                    Swal.fire(
+                        'Error!',
+                        `Data Done: ${data}`,
+                        'warning'
+                    );
+                }else{
+                    Swal.fire(
+                        'Successful!',
+                        `Data Done: ${data}`,
+                        'success'
+                    );
+                    //e.target.reset();
+                }
+            }).catch(err=>{
+        
+                Swal.fire(
+                    'Error!',
+                    `Error In Axios ${err}`,
+                    'warning'
+                  )
+            })
+
+            
+    }
+
     console.log(options)
 
       
@@ -103,12 +140,12 @@ useEffect(()=>{
         <div className='userorderheading'>
         <p>Edit Product({id})</p>
         </div>
-        <form>
+        <form onSubmit={handleSumbit}>
         <div className='addcategcon'>
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Name</p>
-            <input type='text' value={name} onChange={(e)=> setName(e.target.value)}/>
+            <input type='text' name='name' value={name} onChange={(e)=> setName(e.target.value)}/>
             </div>
         </div>
         
@@ -127,21 +164,21 @@ useEffect(()=>{
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Count in Stock</p>
-            <input type='number' value={stock} onChange={(e)=> setStock(e.target.value)}/>
+            <input type='number' name='stock' value={stock} onChange={(e)=> setStock(e.target.value)}/>
             </div>
         </div>
 
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Regular Price</p>
-            <input type='number' value={regular_price} onChange={(e)=> setRegular_price(e.target.value)}/>
+            <input type='number' name='regular_price' value={regular_price} onChange={(e)=> setRegular_price(e.target.value)}/>
             </div>
         </div>
 
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Sale Price</p>
-            <input type='number' value={sale_price} onChange={(e)=> setSale_price(e.target.value)}/>
+            <input type='number' name='sale_price' value={sale_price} onChange={(e)=> setSale_price(e.target.value)}/>
             </div>
         </div>
 
@@ -162,9 +199,9 @@ useEffect(()=>{
         <div className='admineditnamecon'>
             <div className='admineditname'>
             <p>Status</p>
-            <select name='status'>
-            <option >Active</option>
-            <option defaultValue>Deactive</option>
+            <select name='status' value={status} onChange={(e)=>setStatus(e.target.value)}>
+            <option value='Active'>Active</option>
+            <option value='Deactive'>Deactive</option>
             </select>
             </div>
         </div>
@@ -183,7 +220,7 @@ useEffect(()=>{
             })
             }
             </div>
-            <input type='file' multiple onChange={imggalleryPreview}/>
+            <input type='file' name='img_gallery' multiple onChange={imggalleryPreview}/>
         </div>
         </div>
 
