@@ -693,16 +693,9 @@ prevslide={prevslide}
 <img src='/media3/advert5.jpg' alt='midbanner' />
 </Link>
 </div>
-
-</div>
-</div>
-
-<div className='section4'>
-<div className='midbannercon'>
-
 <div className='midbanner'>
 <Link to='/product'>
-<img src='/media3/advert3.jpg' alt='midbanner' />
+<img src='/media3/advert7.jpg' alt='midbanner' />
 </Link>
 </div>
 <div className='midbanner'>
@@ -710,7 +703,6 @@ prevslide={prevslide}
 <img src='/media3/advert7.jpg' alt='midbanner' />
 </Link>
 </div>
-
 </div>
 </div>
 

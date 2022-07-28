@@ -323,20 +323,21 @@ margin: 10px 3px;
 .section4{
     width:100%;
     padding: 10px 0;
+    padding-bottom:2px;
 }
 .midbannercon{
     width:100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .midbanner{
-width: 50%;
+width: 48%;
 display: flex;
 justify-content: space-around;
 align-items: center;
-margin: 0 10px;
     
     a{
         width:100%; 

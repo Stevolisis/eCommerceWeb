@@ -37,6 +37,7 @@ export default function Editproduct(){
                 setSale_price(product.sale_price);
                 setStatus(product.status);
                 setImggallerypreview(product.img_gallery);
+                setInitialValue(product.product_details)
                 product.category.forEach(option=>{
                 setSelected(oldOption=>[...oldOption,{value:option.name, label:option.name}])
                 })                
@@ -83,6 +84,7 @@ export default function Editproduct(){
 
         const formData=new FormData(e.target);
         formData.append('category',JSON.stringify(selected));
+        formData.append('product_details',editorRef.current.getContent());
 
             axios.put(`http://localhost:80/products/editproduct/${id}`,formData,{withCredentials:true})
             .then(res=>{

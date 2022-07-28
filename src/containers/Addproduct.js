@@ -40,9 +40,11 @@ export default function Addproduct({type}){
 
       function handleSumbit(e){
         console.log(selected[0].value);
+        const product_details=editorRef.current && '';
         e.preventDefault();
         const formData=new FormData(e.target)
         formData.append('category',JSON.stringify(selected));
+        formData.append('product_details',product_details);
 
         axios.post('http://localhost:80/products/addproduct',formData,{withCredentials:true})
         .then(res=>{
